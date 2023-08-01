@@ -1,0 +1,16 @@
+/* La siguiente etiqueta cambia el color de fondo en degrade hacia la derecha. */
+html {height: 125%;}body {background-image: linear-gradient(to right, #f8c22d, #856003);}
+h1{
+    /* Las siguientes etiquetas cambian el color del titulo, el tipo de fuente, y el lugar donde
+    se encontrará el título principal.*/
+    background-color: #805c04;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+h2{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+img{
+    /*La siguiente etiqueta le pone borde a las imagenes.*/
+    border: 1px solid #000;
+}
