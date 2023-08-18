@@ -1,0 +1,95 @@
+body{
+background-image:url("matematica.jpg");
+}
+
+.calculadora{
+text-align: center;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-size: 18px; 
+font-weight: 400; 
+color: #ffffff; 
+background:#e66f75;
+padding: 5px;
+margin-top: 70px;
+margin-bottom: 70px;
+margin-left: 400px;
+margin-right: 400px;
+border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+border: 2px solid #e2474f;
+}
+
+h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-transform: uppercase;
+}
+
+.num1{
+    font-weight: bold;
+    font-size: large;
+}
+
+.num2{
+    font-weight: bold;
+    font-size: large;
+}
+
+input,
+select{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    background-color: #ffffff;
+border-radius: 10px;
+padding: 5px;
+margin: 5px;
+text-align: center;
+cursor: pointer;
+}
+
+.boton_calcular{
+    background-image: -moz-linear-gradient(#e2474f,#cf1818);
+    color:#ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+  border-radius: 15px;
+  padding: 10px;
+  cursor:pointer;
+  border-color: #cf1818;
+  }
+
+.boton_calcular:hover {
+    background-image: -moz-linear-gradient(#cf1818,#e2474f);
+    color:#ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+  border-radius: 15px;
+  padding: 10px;
+  cursor:pointer;
+  border-color: #cf1818;
+  }
+
+  .boton_borrar{
+    background-image: -moz-linear-gradient(#e2474f,#cf1818);
+    color:#ffffff;
+    background-color: #e2474f;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor:pointer;
+  border-color: #cf1818;
+  }
+
+  .boton_borrar:hover {
+    background-image: -moz-linear-gradient(#cf1818,#e2474f);
+    color:#ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor:pointer;
+  border-color: #cf1818;
+  }
