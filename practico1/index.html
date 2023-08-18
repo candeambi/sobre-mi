@@ -1,1 +1,42 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora simple</title>
+    <link href="estilo.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <main>
+        <form id="et_form">
+        <!--Agrego los campos y el menú desplegable.-->
+        <div class="calculadora" id="calculadora">
+            <h1>Calculadora simple</h1>
+            <label for="num1" class="num1">Ingrese el primer número:</label><br>
+            <input type="number" id="num1" name="num1" required> 
+            <br><br>
+            <select id="operacion">
+                    <option disabled selected>Seleccione una operación:</option>
+                    <option value="1">+ (Suma)</option>
+                    <option value="2">- (Resta)</option>
+                    <option value="3">* (Multiplicación)</option>
+                    <option value="4">/ (División)</option>
+            </select>
+            <br><br>
+            <label for="num2" class="num2">Ingrese el segundo número:</label><br>
+            <input type="number" id="num2" name="num2" required>
+            <br><br> 
+            <!--Agrego botón para calcular.-->
+            <div class="btn_calcular" >
+                <button type="submit" class="boton_calcular" id="boton_calcular">Calcular</button>
+            </div>
+            <h3 id="resultado">Resultado: </h3>
+            <div class="btn_borrar">
+                <button class="boton_borrar" id="boton_borrar">Borrar</button>
+        </div>
+    </form>
+    </main>
+    <script src="calculadora.js"></script>
+</body>
+</html>
