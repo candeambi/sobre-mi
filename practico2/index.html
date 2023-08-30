@@ -1,1 +1,57 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, papel o tijera</title>
+    <link href="estilo.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <h1>Piedra, papel o tijera</h1>
+    </header>
+    <main>
+        <form id="et_form">
+        <div class = "campoNombre">
+            <label for="nombre" class="nombre">Ingrese su nombre:</label><br>
+            <input type="text" id="nombre" required>
+            <br>
+            <button type="button" id="enviar" class="enviar">Enviar</button> 
+        </div>
+            <div class="marcador">
+                <h2 class ="titulo">Marcador</h2>
+                <h3 class="subtitulo">Partidas ganadas:</h3>
+                <div>
+                    <p class="usuario" id="usuario">Jugador:</p>
+                    <p id="marcadorJugador"></p>
+                    <p>Computadora:</p>
+                    <p id="marcadorComputadora"></p>
+                </div>
+            </div>
+            <p id="resultadoDeRonda" class="resultadoDeRonda"></p>
+            <div class="jugada">
+                <button type="button" id="piedra" class="piedra">
+                    <img src="piedra.jpg" 
+                    alt="seña de piedra"
+                    width="100" height="100" />
+                </button>
+                <button type="button" id="papel" class="papel">
+                    <img src="papel.jpg"
+                    alt="seña de papel"
+                    width="100" height="100" />
+                </button>
+                <button type="button" id="tijera" class="tijera">
+                    <img src="tijera.jpg"
+                    alt="seña de tijera"
+                    width="100" height="100" />
+                </button>
+            </div>
+            <div class="botonReiniciar">
+                <button  id="btnReiniciar">Reiniciar</button>
+                </div>
+        </form>
+    </main>
+    <script src="piedraPapelTijera.js"></script>
+</body>
+</html>
