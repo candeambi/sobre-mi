@@ -7,7 +7,7 @@ function validarInput (event) {
    
     if (!expresionNombre.test(nombre)){ 
         //Utilizo el método .test() para verificar si el valor del input coincide con expresionNombre
-        alert("Por favor, ingrese su nombre para poder jugar. Solo se aceptan letras.");
+        alert("Por favor, ingrese su nombre. Solo se aceptan letras.");
         desactivarBotones();
         return;
     }
