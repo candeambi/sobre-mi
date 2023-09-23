@@ -45,6 +45,19 @@ h1{
     opacity: .7;
 }
 
+.nombre{
+    font-size:x-large;
+}
+
+.avisoNombre{
+    color: #000;
+}
+
+.alerta{
+    color: red;
+    font-size: small;
+}
+
 input{
     text-align: center;
     margin: 10px;
