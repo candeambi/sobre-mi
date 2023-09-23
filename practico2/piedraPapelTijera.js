@@ -42,7 +42,6 @@ function reemplazarNombre(nombre){
     });
 }
 
-
 const enviarBtn = document.getElementById("enviar");
 enviarBtn.addEventListener("click", iniciarJuego);
 
