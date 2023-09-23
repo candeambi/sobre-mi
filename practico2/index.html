@@ -15,9 +15,11 @@
         <form id="et_form">
         <div class = "campoNombre">
             <label for="nombre" class="nombre">Ingrese su nombre:</label><br>
+            <p class="avisoNombre">Debe ingresar su nombre para comenzar el juego</p>
             <input type="text" id="nombre" required>
             <br>
-            <button type="submit" id="enviar" class="enviar">Enviar</button> 
+            <p id="alerta" class="alerta"></p>
+            <button type="button" id="enviar" class="enviar">Comenzar a jugar!</button> 
         </div>
             <div class="marcador">
                 <h2 class ="titulo">Marcador</h2>
@@ -29,19 +31,20 @@
                     <p id="marcadorComputadora"></p>
                 </div>
             </div>
+            <p id="eleccionJugadores" class="resultadoDeRonda"></p>
             <p id="resultadoDeRonda" class="resultadoDeRonda"></p>
             <div class="jugada">
-                <button type="button" id="piedra" class="piedra">
+                <button type="button" id="piedra" class="piedra" disabled>
                     <img src="piedra.jpg" 
                     alt="seña de piedra"
                     width="100" height="100" />
                 </button>
-                <button type="button" id="papel" class="papel">
+                <button type="button" id="papel" class="papel" disabled>
                     <img src="papel.jpg"
                     alt="seña de papel"
                     width="100" height="100" />
                 </button>
-                <button type="button" id="tijera" class="tijera">
+                <button type="button" id="tijera" class="tijera" disabled>
                     <img src="tijera.jpg"
                     alt="seña de tijera"
                     width="100" height="100" />

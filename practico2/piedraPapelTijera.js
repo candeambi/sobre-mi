@@ -2,25 +2,35 @@
 
 const expresionNombre = /^[A-Z]+$/i;
 
-function validarInput (event) {
+function validarInput () {
     const nombre = document.getElementById("nombre").value;
    
     if (!expresionNombre.test(nombre)){ 
         //Utilizo el método .test() para verificar si el valor del input coincide con expresionNombre
-        alert("Por favor, ingrese su nombre. Solo se aceptan letras.");
+        document.getElementById("alerta").textContent= "*Campo obligatorio: Por favor, ingrese su nombre. Solo se aceptan letras y espacios.";
         desactivarBotones();
-        return;
+        return false;
     }
     reemplazarNombre(nombre);
     activarBotones();
-
-    event.preventDefault();
+    return true;
 }
 
 function activarBotones(){
     piedraBtn.disabled = false;
     papelBtn.disabled = false;
     tijeraBtn.disabled = false;
+}
+
+function iniciarJuego(event) {
+    event.preventDefault(); // Detiene el envío del formulario
+
+    const nombreValido = validarInput();
+
+    if (nombreValido) {
+        // Iniciar el juego solo si el nombre es válido
+        activarBotones();
+    }
 }
 
 // Reemplaza el nombre ingresado por el usuario a las palabras jugador
@@ -34,7 +44,7 @@ function reemplazarNombre(nombre){
 
 
 const enviarBtn = document.getElementById("enviar");
-enviarBtn.addEventListener("click", validarInput);
+enviarBtn.addEventListener("click", iniciarJuego);
 
 
 // Partidas
@@ -52,6 +62,7 @@ let victoriasJugador = 0;
 let victoriasComputadora = 0;
 let jugadaUsuario = "";
 
+
 function determinarGanador (){
     const jugadaComputadora = obtenerJugadaComputadora();
     const marcadorJugador = document.getElementById("marcadorJugador");
@@ -59,21 +70,24 @@ function determinarGanador (){
 
 
     if (jugadaComputadora === jugadaUsuario){
+        document.getElementById("eleccionJugadores").textContent = `Elegiste ${jugadaUsuario} y la computadora ${jugadaComputadora}`;
         document.getElementById("resultadoDeRonda").textContent = "Empate";
         console.log("empate");
-    } else if ((jugadaComputadora === "piedra" && jugadaUsuario === "tijeras") ||
+    } else if ((jugadaComputadora === "piedra" && jugadaUsuario === "tijera") ||
     (jugadaComputadora === "papel" && jugadaUsuario === "piedra") ||
-    (jugadaComputadora === "tijeras" && jugadaUsuario === "papel")) {
+    (jugadaComputadora === "tijera" && jugadaUsuario === "papel")) {
         victoriasComputadora++;
         document.getElementById("marcadorComputadora").textContent = victoriasComputadora;
-        document.getElementById("resultadoDeRonda").textContent = "Ganó esta ronda la computadora";
+        document.getElementById("eleccionJugadores").textContent = `Elegiste ${jugadaUsuario} y la computadora ${jugadaComputadora}`;
+        document.getElementById("resultadoDeRonda").textContent = 'Ganó esta ronda la computadora';
         console.log("computadora");
-    } else if ((jugadaUsuario === "piedra" && jugadaComputadora === "tijeras") ||
+    } else if ((jugadaUsuario === "piedra" && jugadaComputadora === "tijera") ||
     (jugadaUsuario === "papel" && jugadaComputadora === "piedra") ||
-    (jugadaUsuario === "tijeras" && jugadaComputadora === "papel")) {
+    (jugadaUsuario === "tijera" && jugadaComputadora === "papel")) {
         victoriasJugador++;
         document.getElementById("marcadorJugador").textContent = victoriasJugador;
-        document.getElementById("resultadoDeRonda").textContent = "Ganaste la ronda";
+        document.getElementById("eleccionJugadores").textContent = `Elegiste ${jugadaUsuario} y la computadora ${jugadaComputadora}`;
+        document.getElementById("resultadoDeRonda").textContent = 'Ganaste la ronda';
         console.log("usuario");
     }
 
@@ -102,20 +116,23 @@ const piedraBtn = document.getElementById("piedra");
 const papelBtn = document.getElementById("papel");
 const tijeraBtn = document.getElementById("tijera");
 
-piedraBtn.addEventListener("click", function() {
+piedraBtn.addEventListener("click", function(event) {
     jugadaUsuario = "piedra"; // Asignar la jugadaUsuario
+    iniciarJuego(event);
     determinarGanador();
     console.log("piedra");
 });
 
-papelBtn.addEventListener("click", function() {
+papelBtn.addEventListener("click", function(event) {
     jugadaUsuario = "papel"; // Asignar la jugadaUsuario
+    iniciarJuego(event);
     determinarGanador();
     console.log("papel");
 });
 
-tijeraBtn.addEventListener("click", function() {
+tijeraBtn.addEventListener("click", function(event) {
     jugadaUsuario = "tijera"; // Asignar la jugadaUsuario
+    iniciarJuego(event);
     determinarGanador();
     console.log("tijera");
 });
